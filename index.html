@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <script defer src="./js/script.js"></script>
+    <title>Авторизация/Регистрация</title>
+</head>
+
+<body>
+    <div class="auth">
+        <div class="header-top">
+            <div class="left">
+                <img src="./img/left.png" alt="left">
+            </div>
+            <div class="phone">
+                <img src="./img/phone.png" alt="phone">
+            </div>
+        </div>
+        <div class="form-auth">
+            <div class="form-title">
+                Войдите или зарегистрируйтесь, чтобы продолжить
+            </div>
+            <form action="#">
+                <div class="form-input">
+                    <span>Телефон</span>
+                    <input class="phone-input" id="phone" onkeyup='checkParams()' type="tel" value="+7"
+                        pattern="\+?[0-9\s\-\(\)]+">
+                </div>
+                <div class="form-btn">
+                    <input id="submit" type="submit" disabled value="Получить код">
+                </div>
+            </form>
+        </div>
+        <footer class="foo-nav">
+            <div class=" foo-home">
+                <img src="./img/home.png" alt="home" class="foo">
+            </div>
+            <div class="foo-title_home">
+                <span>главная</span>
+            </div>
+            <div class="foo-list">
+                <img src="./img/list.png" alt="catalog" class="foo">
+            </div>
+            <div class="foo-title_list">
+                <span>каталог</span>
+            </div>
+            <div class="foo-basket">
+                <img src="./img/basket.png" alt="basket" class="foo">
+            </div>
+            <div class="foo-title_basket">
+                <span>корзина</span>
+            </div>
+            <div class="foo-man">
+                <img src="./img/man.png" alt="man" class="foo">
+            </div>
+            <div class="foo-title_man">
+                <span>профиль</span>
+            </div>
+            <div class="foo-menu">
+                <img src="./img/menu.png" alt="menu" class="foo">
+            </div>
+            <div class="foo-title_menu">
+                <a href="#main-menu" class="menu">
+                    <span>меню</span>
+                </a>
+            </div>
+        </footer>
+        <div id="main-menu" class="nav_menu">
+            <a href="#">
+                <ul class="navs-menu">
+                    <div class="arrow-right">
+                        <img src="./img/arrow-right.png" alt="right">
+                    </div>
+                    <li class="nav-menu">Главная</li>
+                    <div class="arrow-right">
+                        <img src="./img/arrow-right.png" alt="right">
+                    </div>
+            </a>
+            <a href="#">
+                <li class="nav-menu">Каталог</li>
+                <div class="arrow-right">
+                    <img src="./img/arrow-right.png" alt="right">
+                </div>
+            </a>
+            <a href="#">
+                <li class="nav-menu">Профиль</li>
+            </a>
+            </ul>
+        </div>
+    </div>
+
+    <div class="mail-code">
+        <div class="mail-title">
+            <p>На ваш номер было отправлено сообщение, введите его ниже</p>
+        </div>
+        <div class="mail-input">
+            <input type="tel" placeholder="Введите код" minlength="4" maxlength="4">
+        </div>
+        <div class="mail-btn">
+            <input type="button" class="input-btn" value="Отправить">
+        </div>
+    </div>
+    <script>
+        function checkParams() {
+            const phone = $('#phone').val();
+
+            if (phone.length > 17) {
+                $('#submit').removeAttr('disabled');
+            } else {
+                $('#submit').attr('disabled', 'disabled');
+            }
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
